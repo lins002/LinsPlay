@@ -1,115 +1,435 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy - LinsPlay</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - LinsPlay</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-color: #38bdf8;
+            --border-color: #334155;
+            --header-bg: rgba(15, 23, 42, 0.95);
+        }
 
-<style>
-body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#121212;
-color:#fff;
-line-height:1.7;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.container{
-max-width:900px;
-margin:auto;
-padding:25px;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-.card{
-background:#1f1f1f;
-padding:25px;
-border-radius:15px;
-}
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
 
-h1,h2{
-color:#fff;
-}
+        header {
+            position: sticky;
+            top: 0;
+            background-color: var(--header-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem 2rem;
+            z-index: 1000;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
 
-p,li{
-color:#cfcfcf;
-}
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-a{
-color:#4da3ff;
-text-decoration:none;
-}
+        .last-updated {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
 
-footer{
-text-align:center;
-padding:20px;
-color:#888;
-}
-</style>
+        main {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Table of Contents Card */
+        .toc-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .toc-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.75rem;
+        }
+
+        @media (min-width: 768px) {
+            .toc-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .toc-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .toc-link::before {
+            content: "•";
+            color: var(--accent-color);
+            margin-right: 0.5rem;
+        }
+
+        .toc-link:hover {
+            color: var(--accent-color);
+        }
+
+        /* Content Cards */
+        .policy-section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .policy-section:target {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+            color: var(--text-secondary);
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        ul {
+            margin-bottom: 1.25rem;
+            padding-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .highlight-box {
+            background-color: rgba(56, 189, 248, 0.1);
+            border-left: 4px solid var(--accent-color);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .contact-info {
+            background-color: rgba(15, 23, 42, 0.5);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+            color: var(--text-secondary);
+        }
+
+        /* Code/Tech text styling */
+        code {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9em;
+            color: #e2e8f0;
+        }
+
+    </style>
 </head>
-
 <body>
 
-<div class="container">
+    <header>
+        <h1>
+            Privacy Policy - LinsPlay
+            <span class="last-updated">Last Updated: July 2026</span>
+        </h1>
+    </header>
 
-<div class="card">
+    <main>
+        <div class="toc-card">
+            <div class="toc-title">Table of Contents</div>
+            <div class="toc-grid">
+                <a href="#introduction" class="toc-link">Privacy Policy Introduction</a>
+                <a href="#definitions" class="toc-link">Definitions</a>
+                <a href="#acceptance" class="toc-link">Acceptance of this Privacy Policy</a>
+                <a href="#info-we-collect" class="toc-link">Information We Collect</a>
+                <a href="#info-we-do-not-collect" class="toc-link">Information We Do Not Collect</a>
+                <a href="#device-info" class="toc-link">Device Information</a>
+                <a href="#advertising-id" class="toc-link">Advertising ID</a>
+                <a href="#ip-address" class="toc-link">IP Address</a>
+                <a href="#approximate-location" class="toc-link">Approximate Location Information</a>
+                <a href="#advertising-admob" class="toc-link">Advertising and Google AdMob</a>
+                <a href="#google-play-services" class="toc-link">Google Play Services</a>
+                <a href="#cookies" class="toc-link">Cookies and Similar Technologies</a>
+                <a href="#internet-connection" class="toc-link">Internet Connection</a>
+                <a href="#permissions" class="toc-link">Permissions Used</a>
+                <a href="#why-processed" class="toc-link">Why Certain Information May Be Processed</a>
+                <a href="#third-party-services" class="toc-link">Third-Party Services</a>
+                <a href="#third-party-links" class="toc-link">Third-Party Links</a>
+                <a href="#childrens-privacy" class="toc-link">Children's Privacy</a>
+                <a href="#data-security" class="toc-link">Data Security</a>
+                <a href="#data-retention" class="toc-link">Data Retention</a>
+                <a href="#international-users" class="toc-link">International Users</a>
+                <a href="#your-rights" class="toc-link">Your Rights</a>
+                <a href="#policy-updates" class="toc-link">Policy Updates</a>
+                <a href="#contact-us" class="toc-link">Contact Us</a>
+            </div>
+        </div>
 
-<h1>Privacy Policy</h1>
+        <section id="introduction" class="policy-section">
+            <h2>Privacy Policy Introduction</h2>
+            <p>Welcome to LinsPlay. This Privacy Policy outlines the policies and procedures of LINS IO regarding the collection, use, and disclosure of information when you use our Android application, LinsPlay. LINS IO respects your privacy and is committed to protecting it through our compliance with this policy.</p>
+            <p>LinsPlay is designed as an offline HTML5 game collection. Because of the nature of the application, our data practices are highly minimized. Please read this Privacy Policy carefully to understand our policies and practices regarding your information and how it is treated.</p>
+        </section>
 
-<p><strong>Effective Date:</strong> July 2026</p>
+        <section id="definitions" class="policy-section">
+            <h2>Definitions</h2>
+            <p>For the purposes of this Privacy Policy:</p>
+            <ul>
+                <li><strong>App</strong> or <strong>Application</strong> refers to LinsPlay, the software program provided by LINS IO on the Android platform.</li>
+                <li><strong>Developer</strong>, <strong>We</strong>, <strong>Us</strong>, or <strong>Our</strong> refers to LINS IO.</li>
+                <li><strong>User</strong> or <strong>You</strong> means the individual accessing or using the App.</li>
+                <li><strong>Personal Information</strong> means any information that relates to an identified or identifiable individual.</li>
+                <li><strong>Third-Party Service</strong> means any services or content (including data, information, advertisements, and products) provided by a third-party that may be displayed, included, or made available by the App.</li>
+            </ul>
+        </section>
 
-<p>Welcome to <strong>LinsPlay</strong>.</p>
+        <section id="acceptance" class="policy-section">
+            <h2>Acceptance of this Privacy Policy</h2>
+            <p>By downloading, installing, accessing, or using LinsPlay, you acknowledge that you have read, understood, and agree to be bound by the terms of this Privacy Policy. This agreement constitutes a legally binding contract between you and LINS IO.</p>
+            <p>If you do not agree with any part of this Privacy Policy, you must immediately cease all use of the App and uninstall it from your device. Your continued use of the App following the posting of any updates or modifications to this policy will constitute your acceptance of such changes.</p>
+        </section>
 
-<p>LinsPlay is an offline HTML5 gaming application developed by <strong>LINS IO</strong>.</p>
+        <section id="info-we-collect" class="policy-section">
+            <h2>Information We Collect</h2>
+            <div class="highlight-box">
+                LinsPlay itself does NOT directly collect, store, or transmit any personal information to LINS IO.
+            </div>
+            <p>Because LinsPlay functions primarily as an offline HTML5 game application with no user account system, server database, or cloud infrastructure maintained by us, there is no direct mechanism or intent for LINS IO to harvest user data. However, the application integrates third-party services—specifically Google AdMob and Google Play Services—that automatically collect certain technical and usage information required for their operation. This data collection is handled entirely by Google according to Google's own Privacy Policy and is outside the direct control of LINS IO.</p>
+        </section>
 
-<h2>Information We Collect</h2>
+        <section id="info-we-do-not-collect" class="policy-section">
+            <h2>Information We Do Not Collect</h2>
+            <p>To provide complete transparency, we explicitly confirm that LINS IO does <strong>not</strong> collect, process, or store any of the following categories of data:</p>
+            <ul>
+                <li><strong>Personal Identifiable Information (PII):</strong> Names, email addresses, phone numbers, physical addresses, or dates of birth.</li>
+                <li><strong>Authentication Data:</strong> Usernames, passwords, or security PINs, as there is no login, signup, or Firebase Authentication implemented.</li>
+                <li><strong>Financial Information:</strong> Credit card details, banking information, or billing records, as there are no in-app purchases or payment systems.</li>
+                <li><strong>User-Generated Content:</strong> Messages, chat logs, social media profiles, or gameplay screenshots, as there are no chat or social features.</li>
+                <li><strong>Contact Lists:</strong> Device address books or contact lists.</li>
+                <li><strong>Media Files:</strong> Photos, videos, or audio recordings stored on your device.</li>
+            </ul>
+        </section>
 
-<p>LinsPlay does not collect personal information such as:</p>
+        <section id="device-info" class="policy-section">
+            <h2>Device Information</h2>
+            <p>While we do not collect this data directly, Google AdMob and Google Play Services may automatically gather device-specific information to ensure proper ad rendering, app stability, and analytics. This information may include, but is not limited to:</p>
+            <ul>
+                <li>Device Model and Manufacturer</li>
+                <li>Operating System version</li>
+                <li>Device Identifiers</li>
+                <li>Language and Regional settings</li>
+                <li>Diagnostic and Crash Information (if applicable through Google services)</li>
+            </ul>
+            <p>This information is processed by Google and is not accessible in a personally identifiable format by LINS IO.</p>
+        </section>
 
-<ul>
-<li>Name</li>
-<li>Email Address</li>
-<li>Phone Number</li>
-<li>Location</li>
-<li>Contacts</li>
-<li>Photos</li>
-</ul>
+        <section id="advertising-id" class="policy-section">
+            <h2>Advertising ID</h2>
+            <p>To provide advertisements within the App, Google AdMob utilizes the Android Advertising ID (AAID). The AAID is a unique, user-resettable identifier for advertising provided by Google Play services. It gives users better controls and provides developers with a standard system to continue to monetize their apps securely.</p>
+            <p>Google AdMob uses this identifier to serve targeted advertisements based on your interests and to measure the performance of advertising campaigns. You have the ability to reset this identifier or opt-out of personalized ads entirely through your device's settings.</p>
+        </section>
 
-<h2>Advertising</h2>
+        <section id="ip-address" class="policy-section">
+            <h2>IP Address</h2>
+            <p>When the App connects to the internet to request an advertisement, your device's Internet Protocol (IP) address is automatically transmitted to Google AdMob servers. The IP address is a numerical label assigned to each device connected to a computer network. Google utilizes this IP address to deliver the advertisement payload back to your device, prevent fraud, and infer broad geographic distribution.</p>
+        </section>
 
-<p>We use Google AdMob to display advertisements. Google may collect device identifiers, advertising ID, IP address, and other information necessary for personalized or non-personalized ads.</p>
+        <section id="approximate-location" class="policy-section">
+            <h2>Approximate Location Information</h2>
+            <p>LinsPlay does not request precise GPS location permissions (such as ACCESS_FINE_LOCATION or ACCESS_COARSE_LOCATION). However, approximate location information may be deduced by Google AdMob using your device's IP address. This inferred, approximate location data (typically at the city or regional level) is processed strictly when required by Google AdMob to serve geographically relevant advertisements and comply with local advertising regulations.</p>
+        </section>
 
-<h2>Internet</h2>
+        <section id="advertising-admob" class="policy-section">
+            <h2>Advertising and Google AdMob</h2>
+            <p>LinsPlay relies on Google AdMob as its sole method of monetization. Consequently, while the HTML5 games themselves are playable offline, an internet connection is utilized when available specifically for loading and displaying advertisements served by Google AdMob.</p>
+            <p>Google AdMob may automatically collect information including, but not limited to, Advertising Performance Data, Network Information, and Device Identifiers to provide, evaluate, and improve its advertising services. The practices of Google AdMob are governed by Google's Privacy Policy, and LINS IO does not control the tracking technologies employed by these advertising networks.</p>
+        </section>
 
-<p>The games work offline. Internet is only required for loading advertisements.</p>
+        <section id="google-play-services" class="policy-section">
+            <h2>Google Play Services</h2>
+            <p>The App is distributed through the Google Play Store and operates within the Android ecosystem, which intrinsically relies on Google Play Services. Google Play Services may run in the background and collect baseline operational data, crash logs, and usage metrics to ensure device security, app integrity, and reliable performance. This data collection is systemic to the Android operating system and is governed by Google's terms and privacy agreements.</p>
+        </section>
 
-<h2>Third-Party Services</h2>
+        <section id="cookies" class="policy-section">
+            <h2>Cookies and Similar Technologies</h2>
+            <p>Because LinsPlay is a native Android application featuring HTML5 games, it does not use traditional web cookies in the way a standard web browser does. However, the integrated third-party SDKs (such as Google AdMob) may utilize mobile identifiers, local storage, and similar tracking technologies to function correctly, track ad views, frequency cap advertisements, and prevent fraudulent activity.</p>
+        </section>
 
-<ul>
-<li>Google AdMob</li>
-</ul>
+        <section id="internet-connection" class="policy-section">
+            <h2>Internet Connection</h2>
+            <p>The application is designed as an offline HTML5 game collection, meaning the core gameplay mechanics do not require an active internet connection to function. Internet is required only for loading advertisements served by Google AdMob. If your device is disconnected from the internet, the games will continue to function normally, but advertisements will not be fetched or displayed during that offline period.</p>
+        </section>
 
-<h2>Children's Privacy</h2>
+        <section id="permissions" class="policy-section">
+            <h2>Permissions Used</h2>
+            <p>To function as intended, specifically to support our advertising integration, LinsPlay requests the following minimal Android system permissions:</p>
+            <ul>
+                <li><code>INTERNET</code>: This permission allows the App to open network sockets. It is used exclusively by the Google AdMob SDK to request and download advertising payloads over the internet.</li>
+                <li><code>ACCESS_NETWORK_STATE</code>: This permission allows the App to access information about networks. It is used by the Google AdMob SDK to determine whether an active internet connection is available before attempting to request an advertisement, thereby saving device battery and data usage.</li>
+            </ul>
+        </section>
 
-<p>LinsPlay does not knowingly collect personal information from children.</p>
+        <section id="why-processed" class="policy-section">
+            <h2>Why Certain Information May Be Processed</h2>
+            <p>While LINS IO does not directly collect your data, the automated data collection performed by integrated third-party services (Google) is necessary for the following operational purposes:</p>
+            <ul>
+                <li><strong>Ad Serving:</strong> To deliver, manage, and display advertisements within the App.</li>
+                <li><strong>Analytics and Performance:</strong> To understand how ads are performing and to generate aggregate statistics.</li>
+                <li><strong>Fraud Prevention:</strong> To detect and prevent invalid clicks, malicious activity, and ad fraud.</li>
+                <li><strong>App Stability:</strong> To monitor crash information (if applicable) ensuring the underlying Google services remain stable and reliable.</li>
+            </ul>
+        </section>
 
-<h2>Changes</h2>
+        <section id="third-party-services" class="policy-section">
+            <h2>Third-Party Services</h2>
+            <p>This App incorporates third-party services that operate under their own privacy policies. We strongly encourage all users to review these policies, as these third-party services operate independently and their data processing activities are outside the direct control of LINS IO. You can review the relevant policies at the following official links:</p>
+            <ul>
+                <li><strong>Google Privacy Policy:</strong><br><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy</a></li>
+                <li><strong>Google AdMob Privacy:</strong><br><a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener noreferrer">https://support.google.com/admob/answer/6128543</a></li>
+                <li><strong>Google Play Services:</strong><br><a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer">https://policies.google.com/terms</a></li>
+            </ul>
+            <div class="highlight-box">
+                Legal Disclaimer: LINS IO explicitly disclaims responsibility for the data collection, retention, processing, and advertising practices of any third-party services, including Google and its subsidiaries.
+            </div>
+        </section>
 
-<p>This Privacy Policy may be updated from time to time.</p>
+        <section id="third-party-links" class="policy-section">
+            <h2>Third-Party Links</h2>
+            <p>The advertisements displayed within LinsPlay may contain links to external websites, applications, or services that are not operated by LINS IO. If you click on a third-party advertisement or link, you will be directed to that third party's site. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services accessed through advertisements within our App.</p>
+        </section>
 
-<h2>Contact</h2>
+        <section id="childrens-privacy" class="policy-section">
+            <h2>Children's Privacy</h2>
+            <p>LINS IO takes children's privacy seriously and complies with the Google Play Families Policy and relevant international regulations such as the Children's Online Privacy Protection Act (COPPA). LinsPlay does not knowingly collect personally identifiable information from children under the age of 13 (or the applicable age of consent in your jurisdiction).</p>
+            <p>Because the app monetizes via Google AdMob, we configure our advertising settings to appropriately manage ad serving to younger audiences as required by Google's policies. If you are a parent or guardian and you believe that your child has provided us directly with personal data (despite our app having no data input mechanisms), please contact us immediately so that we can take necessary actions.</p>
+        </section>
 
-<p>
-Developer: LINS IO<br>
-Email: linsio.official@gmail.com
-</p>
+        <section id="data-security" class="policy-section">
+            <h2>Data Security</h2>
+            <p>Since LinsPlay does not collect, transmit, or store personal information on our own servers, the risk of data breaches concerning our direct infrastructure is eliminated. However, for the data processed by Google's integrated SDKs, we rely on Google's industry-leading security protocols and infrastructure. Remember that no method of electronic transmission or data storage is 100% secure, but we trust the robust security standards maintained by our third-party partners.</p>
+        </section>
 
-</div>
+        <section id="data-retention" class="policy-section">
+            <h2>Data Retention</h2>
+            <p>LINS IO does not retain any user data. Any technical, device, or advertising data automatically collected by Google Play Services or Google AdMob is retained by Google in accordance with their distinct data retention policies. We do not have access to a database of users, nor do we possess the ability to query or delete data held by Google on their respective platforms.</p>
+        </section>
 
-<footer>
-© 2026 LINS IO. All Rights Reserved.
-</footer>
+        <section id="international-users" class="policy-section">
+            <h2>International Users</h2>
+            <p>If you are accessing LinsPlay from outside the United States, please be aware that the third-party services we utilize (Google) operate globally. The automated information collected by these services may be transferred to, processed, and stored in the United States or other countries where Google maintains facilities. By using the App, you consent to the transfer of this data internationally, governed by Google's global data processing agreements.</p>
+        </section>
 
-</div>
+        <section id="your-rights" class="policy-section">
+            <h2>Your Rights</h2>
+            <p>Depending on your jurisdiction (such as under the GDPR in Europe or the CCPA in California), you may have certain rights regarding your personal information. Because LINS IO does not hold your data, requests regarding data access, deletion, or portability must be directed to the third-party processors (Google).</p>
+            <p>You do, however, have direct control over advertising tracking on your device. You can exercise your right to opt-out of personalized advertising by navigating to your Android device settings, locating the Google settings, and selecting the option to "Opt out of Ads Personalization" or by resetting your Advertising ID.</p>
+        </section>
+
+        <section id="policy-updates" class="policy-section">
+            <h2>Policy Updates</h2>
+            <p>We may update our Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or third-party integrations. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date at the top of this document.</p>
+            <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are published on this page.</p>
+        </section>
+
+        <section id="contact-us" class="policy-section">
+            <h2>Contact Us</h2>
+            <p>If you have any legal inquiries, concerns, or questions regarding this Privacy Policy, the practices of this App, or your dealings with the application, please do not hesitate to contact us at the details provided below:</p>
+            <div class="contact-info">
+                <p><strong>Developer:</strong> LINS IO</p>
+                <p><strong>Email:</strong> <a href="mailto:linsio.official@gmail.com">linsio.official@gmail.com</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 LINS IO. All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>
