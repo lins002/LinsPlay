@@ -1,1 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy - LinsPlay</title>
 
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#121212;
+color:#fff;
+line-height:1.7;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:25px;
+}
+
+.card{
+background:#1f1f1f;
+padding:25px;
+border-radius:15px;
+}
+
+h1,h2{
+color:#fff;
+}
+
+p,li{
+color:#cfcfcf;
+}
+
+a{
+color:#4da3ff;
+text-decoration:none;
+}
+
+footer{
+text-align:center;
+padding:20px;
+color:#888;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>Privacy Policy</h1>
+
+<p><strong>Effective Date:</strong> July 2026</p>
+
+<p>Welcome to <strong>LinsPlay</strong>.</p>
+
+<p>LinsPlay is an offline HTML5 gaming application developed by <strong>LINS IO</strong>.</p>
+
+<h2>Information We Collect</h2>
+
+<p>LinsPlay does not collect personal information such as:</p>
+
+<ul>
+<li>Name</li>
+<li>Email Address</li>
+<li>Phone Number</li>
+<li>Location</li>
+<li>Contacts</li>
+<li>Photos</li>
+</ul>
+
+<h2>Advertising</h2>
+
+<p>We use Google AdMob to display advertisements. Google may collect device identifiers, advertising ID, IP address, and other information necessary for personalized or non-personalized ads.</p>
+
+<h2>Internet</h2>
+
+<p>The games work offline. Internet is only required for loading advertisements.</p>
+
+<h2>Third-Party Services</h2>
+
+<ul>
+<li>Google AdMob</li>
+</ul>
+
+<h2>Children's Privacy</h2>
+
+<p>LinsPlay does not knowingly collect personal information from children.</p>
+
+<h2>Changes</h2>
+
+<p>This Privacy Policy may be updated from time to time.</p>
+
+<h2>Contact</h2>
+
+<p>
+Developer: LINS IO<br>
+Email: linsio.official@gmail.com
+</p>
+
+</div>
+
+<footer>
+© 2026 LINS IO. All Rights Reserved.
+</footer>
+
+</div>
+
+</body>
+</html>
